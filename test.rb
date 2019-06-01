@@ -1,19 +1,33 @@
 
 
-## CLASSES AND OBJECTS
+## CLASSES AND OBJECTS  || Initialize METHODS || INSTANCE METHODS
 
         # a class is a custom datatype in ruby
         class Book
           attr_accessor :title, :author, :pages
+          def initialize(title, author, pages)
+            @title = title
+            @author = author
+            @pages = pages
+          end
+
+          def has_honors
+            if @pages >= 3.5
+              return true
+            end
+            return false
+          end
         end
 
         # an object is an instance of a class (in this case a book)
-        book1 = Book.new()
+        book1 = Book.new("mike", "author", 34)
+        puts book1.title
+        puts book1.has_honors
         book1.title = "Gains Title"
         book1.author = "Gains Author"
         book1.pages = 24
 
-        puts book1.title
+        #puts book1.title
 
 
 
@@ -33,7 +47,7 @@
 
 ## WRITING TO FILES
 
-      # file = File.open("testInput.txt", "a")
+      # file = File.open(" testInput.txt", "a")
       # file.write("\nOscar, Accounting")
       # #puts file.read()
       # file.close()
